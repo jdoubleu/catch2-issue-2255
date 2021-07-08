@@ -9,5 +9,6 @@ FetchContent_Declare(Catch2
         GIT_TAG v2.13.6)
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp test.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE Catch2::Catch2)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
