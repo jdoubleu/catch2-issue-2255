@@ -117,6 +117,19 @@ TEST_CASE("what I have to do")
     }
 }
 
+TEMPLATE_TEST_CASE("what I could do", "",
+    (Algorithm<std::string, Node>),
+    (Algorithm<std::string, Strict_node>))
+{
+    TestType algo{};
+    algo.insert("Hello");
+    algo.insert("Test");
+    algo.insert("World");
+
+    algo.sort();
+    REQUIRE(algo.is_sorted());
+}
+
 }
 
 
